@@ -1,0 +1,1 @@
+"use strict";module.exports=function(e,t){void 0===t&&(t="");var n=function(e){getComputedStyle(document.documentElement).getPropertyValue(e)}(e);return t&&t!==n&&(function(e,t){document.documentElement.style.setProperty(e,t)}(e,t),n=t),n};

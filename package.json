@@ -1,0 +1,25 @@
+{
+  "name": "var-css",
+  "version": "1.0.0",
+  "description": "Support for css var() syntax in js",
+  "keywords": [
+    "css",
+    "global",
+    "variables",
+    "var",
+    "javascript",
+    "js"
+  ],
+  "source": "var-css.js",
+  "main": "index.js",
+  "scripts": {
+    "build": "microbundle -f cjs --no-sourcemap --strict"
+  },
+  "author": "Damián De Lio",
+  "license": "MIT",
+  "repository": "https://github.com/damiandelio/var-css",
+  "homepage": "https://github.com/damiandelio/var-css#readme",
+  "devDependencies": {
+    "microbundle": "^0.12.3"
+  }
+}
