@@ -1,17 +1,10 @@
-function getVariable(name) {
-   getComputedStyle(document.documentElement).getPropertyValue(name)
-}
-function setVariable(name, newValue) {
-   document.documentElement.style.setProperty(name, newValue)
-}
-
-export default function _var(name, newValue = '') {
-   let value = getVariable(name)
-
-   if (newValue && newValue !== value) {
-      setVariable(name, newValue)
-      value = newValue
+const varCss = {
+   get: function(name) {
+      return getComputedStyle(document.documentElement).getPropertyValue(name)
+   },
+   set: function(name, newValue) {
+      document.documentElement.style.setProperty(name, newValue)
    }
-
-   return value
 }
+
+export default varCss

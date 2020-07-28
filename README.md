@@ -1,7 +1,4 @@
 # Var Css️
-Support for css var() syntax in js.
-
-## Install
 With Npm
 ```shell script
 npm install var-css --save
@@ -12,37 +9,26 @@ yarn add var-css
 ```
 
 ## Usage
-It's similar to var() css function:
 ```javascript
-import _var from 'var-css'
+import varCss from 'var-css'
 
-// Returns a string with the current value of the variable.
-_var('--primary-color')
+// Get a string with the current value
+varCss.get('--primary-color')
 
-// sets a new value for the variable,
-// and returns the current new value.
-_var('--secondary-color', '#40eeff')
+// Set a new value
+varCss.set('--secondary-color', '#40eeff')
 ```
 
 ## Source code
 If you don't want to include the library, you can copy and paste the source code:
 ```javascript
-function getVariable(name) {
-   getComputedStyle(document.documentElement).getPropertyValue(name)
-}
-function setVariable(name, newValue) {
-   document.documentElement.style.setProperty(name, newValue)
-}
-
-export default function _var(name, newValue = '') {
-   let value = getVariable(name)
-
-   if (newValue && newValue !== value) {
-      setVariable(name, newValue)
-      value = newValue
+const varCss = {
+   get: function(name) {
+      return getComputedStyle(document.documentElement).getPropertyValue(name)
+   },
+   set: function(name, newValue) {
+      document.documentElement.style.setProperty(name, newValue)
    }
-
-   return value
 }
 ```
-\* The bundled library is compressed and has support for ES5.
+\* The bundled library has support for ES5.
